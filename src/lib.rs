@@ -8,7 +8,10 @@ fn get_dist_info() -> PyResult<String> {
     let dist_id = dist_release_info.id.unwrap(); 
     println!("os release is :{dist_id}");
     if dist_id.eq("fedora"){
-        return Ok(dist_id + "dnf");
+        return Ok(dist_id + ":dnf");
+    }
+    if dist_id.eq("ubuntu"){
+        return Ok(dist_id + ":apt");
     }
     Ok(dist_id)
 }
