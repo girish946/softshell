@@ -15,7 +15,7 @@ fn get_dist_info() -> PyResult<String> {
 
 /// A Python module implemented in Rust.
 #[pymodule]
-fn softshell(_py: Python, m: &PyModule) -> PyResult<()> {
+fn softsh(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(get_dist_info, m)?)?;
     Ok(())
 }
